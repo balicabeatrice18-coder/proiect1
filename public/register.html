@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <h2>Simple Site</h2>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <a href="/product">Product</a>
+            <a href="/register">Register</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <h1>Register</h1>
+
+    <form method="POST" action="/register">
+        <input type="text" name="username" placeholder="Name"><br><br>
+        <input type="email" name="email" placeholder="Email"><br><br>
+        <input type="password" name="password" placeholder="Password"><br><br>
+        <input type="number" name="age" placeholder="Age"><br><br>
+
+        <button class="btn primary">Register</button>
+    </form>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>&copy; <span id="year"></span> Simple Site. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

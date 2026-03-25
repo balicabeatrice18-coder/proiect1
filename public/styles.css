@@ -1,0 +1,100 @@
+body {
+    background-image: url("bg.jpg");
+}
+
+/* CONTAINER */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* HEADER */
+.site-header {
+    background: white;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* NAV */
+.nav a {
+    margin: 10px;
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: #007bff;
+}
+
+/* TITLURI */
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* CARD EFFECT */
+main.container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    margin-top: 30px;
+}
+
+/* FORM */
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    transition: 0.2s;
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* BUTTON */
+.btn {
+    background: #007bff;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* FOOTER */
+.site-footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #777;
+}
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid #f4a65e;
+    color: #f4a65e;
+    font-weight: 500;
+}
+.btn.primary {
+    background: #f4a65e;
+    color: #ffffff;
+}
+body {
+    background-image: url("bg.jpg");
+}
