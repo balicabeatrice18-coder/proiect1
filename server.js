@@ -89,6 +89,7 @@ app.post('/register', async (req, res) => {
         res.status(500).send('Eroare internă a serverului.');
     }
 });
+app.use(express.static('public'));
 
 app.listen(PORT, async () => {
     await initializeDatabase();
