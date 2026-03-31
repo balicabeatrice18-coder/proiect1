@@ -48,6 +48,7 @@
                 </div>
                 <button type="submit" class="btn primary">Înregistrează-te</button>
             </form>
+            <p id="form-message" style="color:red;"></p>
         </section>
     </main>
 
@@ -58,29 +59,34 @@
     </footer>
 
     <script>
-        const form = document.querySelector('.form');
-        const passwordInput = document.getElementById('password');
-        const confirmPasswordInput = document.getElementById('confirm-password');
+const form = document.querySelector('.form');
+const passwordInput = document.getElementById('password');
+const confirmPasswordInput = document.getElementById('confirm-password');
+const ageInput = document.getElementById('age');
+const message = document.getElementById('form-message');
 
-        function validatePasswords() {
-    if (passwordInput.value !== confirmPasswordInput.value) {
-        confirmPasswordInput.setCustomValidity("Parolele nu coincid");
-    } else {
-        confirmPasswordInput.setCustomValidity("");
-    }
+function validatePasswords() {
+  if (passwordInput.value !== confirmPasswordInput.value) {
+    confirmPasswordInput.setCustomValidity("Parolele nu coincid");
+  } else {
+    confirmPasswordInput.setCustomValidity("");
+  }
 }
 
 passwordInput.addEventListener("input", validatePasswords);
 confirmPasswordInput.addEventListener("input", validatePasswords);
 
 form.addEventListener("submit", function(event) {
-    if (passwordInput.value !== confirmPasswordInput.value) {
-        event.preventDefault();
-        confirmPasswordInput.reportValidity();
-    } else {
-        event.preventDefault(); 
-        alert("Înregistrare reușită (fără server)");
-    }
+  if (passwordInput.value !== confirmPasswordInput.value) {
+    event.preventDefault();
+    confirmPasswordInput.reportValidity();
+    return;
+  }
+
+  if (parseInt(ageInput.value) < 18) {
+    event.preventDefault();
+    message.textContent = "Varsta trebuie sa fie mai mare de 18.";
+  }
 });
 </script>
 </body>

@@ -17,7 +17,7 @@ const pool = mysql.createPool({
     port: process.env.MYSQL_PORT || 3306,
     user: process.env.MYSQL_USER || 'root',
     password: process.env.MYSQL_PASSWORD || '',
-    database: process.env.MYSQL_DATABASE || 'itb04',
+    database: process.env.MYSQL_DATABASE || 'itb03',
 });
 
 async function initializeDatabase() {
@@ -78,7 +78,7 @@ app.post('/register', async (req, res) => {
                 [username, email, password, age]
             );
             connection.release();
-            res.sendFile(path.join(__dirname, 'public', 'register-success.html'));
+                res.redirect('/register-success.html');
         } catch (error) {
             connection.release();
             console.error('Eroare la înregistrarea utilizatorului:', error);
